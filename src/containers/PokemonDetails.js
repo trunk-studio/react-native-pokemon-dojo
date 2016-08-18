@@ -15,7 +15,7 @@ import BasicInfo from '../components/BasicInfo';
 import Sprites from '../components/Sprites';
 import Moves from '../components/Moves';
 import Stats from '../components/Stats';
-
+import Header from '../components/Header';
 
 class PokemonDetails extends Component {
   componentWillMount() {
