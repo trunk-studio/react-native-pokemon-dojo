@@ -1,6 +1,8 @@
 import {
   StyleSheet,
   View,
+  Text,
+  Image,
   ListView,
   Platform,
 } from 'react-native';
@@ -39,16 +41,35 @@ class Pokedex extends Component {
     const { pokemon } = this.state;
     const { goToPokemonDetail, filter, query, ready } = this.props;
 
+    var level1pass = true;
+
     return (
       <Loader show={ !ready }>
         <View style={ styles.container }>
+
+          {/*
+          步驟一、在畫面上顯示皮卡丘和 Hello, Pokemon 文字訊息
+          */}
+          {/* 提示：請刪除這一行程式碼 */}<Image source={require('../assets/who.jpg')} style={{ marginTop: 50, width: 100, height: 100 }} />{ level1pass = false }<Text style={{ textAlign: 'center', alignSelf: 'stretch', color: '#ffffff', backgroundColor: '#FF0000' }}>第一關、解鎖消失的皮卡丘</Text>
+
+          {/* 提示：請取消註解這一段程式碼 */}{/*
+          <Image source={{ uri: 'http://vignette2.wikia.nocookie.net/pokemon/images/e/ef/025Pikachu_Pokemon_Mystery_Dungeon_Red_and_Blue_Rescue_Teams.png/revision/latest?cb=20150105233050' }} style={ styles.headingImage } />
+          <Text style={ styles.headingText }>Hello, Pokemon</Text>
+          */}
 
           <ListView dataSource={ pokemon }
             style={ styles.listView }
             renderRow={ (...args) => renderRow(goToPokemonDetail, ...args) }
             enableEmptySections />
 
+          {/*
+          步驟二、在畫面上顯示皮卡丘和 Hello, Pokemon 文字訊息
+          */}
+          {/* 提示：請刪除這一行程式碼 */}<Text style={{ textAlign: 'center', alignSelf: 'stretch', color: '#ffffff', backgroundColor: '#FF0000', opacity: level1pass?1:0 }}>第二關、解鎖快速搜尋列</Text>
+
+          {/* 提示：請取消註解這一段程式碼 */}{/*
           <SearchBar onChange={ filter } value={ query } />
+          */}
 
           { Spacer }
 
@@ -76,6 +97,29 @@ const styles = StyleSheet.create({
   listView: {
     flex: 1,
     alignSelf: 'stretch',
+  },
+  headingImage: {
+    /* 提示：請取消註解這一段程式碼 */
+    /*
+    width: 120,
+    height: 120,
+    margin: 5,
+    */
+  },
+  headingText: {
+    /* 提示：請取消註解這一段程式碼 */
+    /*
+    fontSize: 18,
+    fontWeight: 'bold',
+    textAlign: 'center',
+    alignSelf: 'stretch',
+    padding: 5,
+    color: '#FFFFFF',
+    backgroundColor: '#3269b2',
+    textShadowOffset: {width: 1, height: 1},
+    textShadowRadius: 2,
+    textShadowColor: '#00cccc',
+    */
   },
 });
 

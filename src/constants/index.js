@@ -16,7 +16,7 @@ export const ROUTES = {
   POKEDEX: {
     key: ROUTE_IDS.MAIN_NAVIGATOR,
     index: 0,
-    children: [{ key: ROUTE_IDS.POKEDEX, title: 'Pokedex' }],
+    children: [{ key: ROUTE_IDS.POKEDEX, title: 'Pokemon Dojo' }],
   },
   POKEMON_DETAIL: (title, url) => ({
     key: ROUTE_IDS.POKEMON_DETAIL,
